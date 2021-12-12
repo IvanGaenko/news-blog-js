@@ -1,0 +1,47 @@
+.single-page-container {
+  max-width: 765px;
+  width: 100%;
+  margin: auto;
+}
+
+.single-page img {
+  height: 380px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.single-page-title {
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 54px;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+.single-page-description {
+  display: flex;
+  margin-bottom: 70px;
+}
+
+.written-by {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #2d3748;
+  margin-right: 20px;
+}
+
+.single-page-time {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #718096;
+}
+
+.single-page-content {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #718096;
+  margin-bottom: 60px;
+}

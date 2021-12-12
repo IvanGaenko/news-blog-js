@@ -1,0 +1,38 @@
+.footer {
+  height: 60px;
+  width: 100%;
+  border-top: 1.5px solid $grey;
+}
+
+.footer .container {
+  height: 100%;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+}
+
+.footer-title {
+  font-weight: bold;
+  margin-right: 0.2rem;
+}
+
+.backToTop {
+  width: 141px;
+  height: 37px;
+  display: none;
+  position: fixed;
+  bottom: 120px;
+  right: 54px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #2f80ed;
+  color: $white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}

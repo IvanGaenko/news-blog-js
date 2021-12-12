@@ -1,0 +1,124 @@
+.burger {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.burger span,
+.burger span:before,
+.burger span:after {
+  width: 18px;
+  position: absolute;
+  height: 2px;
+  background: $black;
+  display: block;
+  transition: 0.3s;
+}
+
+.burger span:before {
+  content: "";
+  top: -4px;
+  transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.burger span {
+  top: 30px;
+}
+
+.burger span:after {
+  content: "";
+  bottom: -4px;
+  transition: bottom 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.burger span.active:before {
+  content: "";
+  top: 0px;
+  transform: rotate(45deg);
+  transition: top 300ms,
+    transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.burger span.active:after {
+  content: "";
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom 300ms,
+    transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.burger span.active {
+  background: $invisible;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  color: $black;
+  font-size: 14px;
+  transition: opacity 500ms linear, visibility 0s linear 500ms;
+}
+
+.menu.animate {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 500ms linear, visibility 0s linear;
+}
+
+.menu-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-right: 60px;
+  height: 15px;
+}
+
+.drop-down-menu {
+  display: none;
+  align-content: space-between;
+  width: 220px;
+  height: 113px;
+  position: absolute;
+  background: white;
+  top: 50px;
+  box-shadow: 0px 0px 4px #bdbdbd;
+  border-radius: 5px;
+  padding: 15px 30px;
+}
+
+.menu-item:hover .drop-down-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.drop-down-menu:before {
+  content: "";
+  position: absolute;
+  border-color: $grey;
+  border: solid transparent;
+  border-bottom-color: white;
+  border-width: 10px;
+  margin-left: -10px;
+  top: -18px;
+  right: 109px;
+  z-index: 1;
+}
+
+.drop-down-menu:after {
+  content: "";
+  position: absolute;
+  right: 110px;
+  top: -18px;
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  border-width: 9px;
+  border-bottom-color: #bdbdbd;
+  z-index: 0;
+}
+
+.drop-down-content {
+  width: 50%;
+  font-size: 14px;
+}

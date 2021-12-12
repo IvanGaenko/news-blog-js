@@ -1,0 +1,48 @@
+body {
+  font-family: $mainFont;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1050px;
+  width: 100%;
+  padding: 0 15px;
+  margin: auto;
+}
+
+input,
+input::placeholder {
+  color: $black;
+  font-size: 14px;
+}
+
+select {
+  padding-left: 10px;
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0;
+  padding: 22px 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.33;
+  letter-spacing: 1px;
+  text-align: center;
+  white-space: nowrap;
+  touch-action: manipulation;
+  cursor: pointer;
+  color: $white;
+  outline: snow;
+
+  &:hover {
+    background-color: #8be2e5;
+    transition: all 0.35s ease-in-out;
+  }
+}
