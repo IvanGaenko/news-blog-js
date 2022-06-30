@@ -1,23 +1,22 @@
-.footer {
+footer {
   height: 60px;
   width: 100%;
-  border-top: 1.5px solid $grey;
-}
-
-.footer .container {
-  height: 100%;
-}
-
-.footer-content {
+  border-top: 1.5px solid $darkgray;
+  //border: 1px solid black;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  height: 100%;
-  font-size: 16px;
 }
 
-.footer-title {
-  font-weight: bold;
-  margin-right: 0.2rem;
+footer .container {
+  flex-direction: row;
+  height: 60px;
+  justify-content: space-between;
+  //border: 1px solid black;
+}
+
+footer span {
+  font-size: 16px;
 }
 
 .backToTop {
@@ -35,4 +34,5 @@
   cursor: pointer;
   border-radius: 5px;
   font-size: 16px;
+  //opacity: 0.7;
 }

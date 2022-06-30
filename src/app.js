@@ -1,17 +1,22 @@
 import News from "./models/News";
+import Category from "./models/Category";
 import View, { DOM_ELEMENTS } from "./View";
 
 class Application {
   constructor() {
     this.news = new News();
-    this.category = "trending";
+    this.category = new Category();
     this.inputValue = "";
     this.switcher = "list";
+    this.openMenu = false;
+    this.openCategory = false;
   }
 
   init() {
-    this.displayNewsList(this.category);
+    this.displayCategory();
+    this.displayNewsList(this.category.current);
     this.setupEventListeners();
+    console.log(document.documentElement.clientWidth);
   }
 
   setupEventListeners() {
@@ -24,20 +29,38 @@ class Application {
     document
       .querySelector(DOM_ELEMENTS.burgerMenu)
       .addEventListener("click", () => {
-        View.toggleBurgerMenu();
+        
+        if (this.openMenu && this.openCategory) {
+          this.toggleCategoryMenu();
+        }
+        this.toggleBurgerMenu();
       });
-
+      
+    document
+      .querySelector(DOM_ELEMENTS.menuList)
+      .addEventListener("click", (e) => {
+        this.toggleCategoryMenu();
+      });
+      
+    document
+      .querySelector(DOM_ELEMENTS.menuList)
+      .addEventListener("mouseenter", (e) => {
+        this.toggleCategoryMenu();
+      });
+    
     document.querySelectorAll(DOM_ELEMENTS.categoryBtn).forEach((category) => {
       category.addEventListener("click", (e) => {
-        this.category = e.target.id;
-        this.displayNewsList(this.category);
-        View.toggleBurgerMenu();
+        this.category.setCategory(e.target.id);
+        this.displayNewsList(this.category.current);
+        this.defaultMenu();
+        e.stopPropagation();
       });
     });
 
     document.querySelector(DOM_ELEMENTS.logo).addEventListener("click", () => {
       View.clearInput();
-      this.displayNewsList(this.category);
+      this.defaultMenu();
+      this.displayNewsList(this.category.current);
     });
 
     document
@@ -62,6 +85,26 @@ class Application {
         }
       });
   }
+  
+  displayCategory() {
+    this.category.getCategoryList();
+    View.displayCategory(this.category.listHTML);
+  }
+  
+  toggleBurgerMenu(isOpened = !this.openMenu) {
+    this.openMenu = isOpened;
+    View.toggleBurgerMenu(this.openMenu);
+  }
+  
+  toggleCategoryMenu(isOpened = !this.openCategory) {
+    this.openCategory = isOpened;
+    View.toggleCategoryMenu(this.openCategory);
+  }
+  
+  defaultMenu() {
+    this.toggleCategoryMenu(false);
+    this.toggleBurgerMenu(false);
+  }
 
   async displayNewsList(category) {
     const status = await this.news.getNewsList(category);
@@ -85,6 +128,7 @@ class Application {
       }
       if (type === "remove") {
         page.removeEventListener("click", (e) => {
+          View.clearPreviewList();
           this.displayNewsPage(e.target.attributes[1].value, this.inputValue);
         });
       }
@@ -125,6 +169,7 @@ class Application {
       this.switcher = "page";
       this.eventScroll("remove");
       View.clearAllCards();
+      this.defaultMenu();
       View.displayNewsList(this.news.newsPageHtml);
       View.backToTop();
     }

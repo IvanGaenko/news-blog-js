@@ -1,0 +1,32 @@
+@media (max-width: 600px) {
+  //.container {
+    //max-width: 600px;
+  //}
+  
+  //.input-container {
+    //width: 50px;
+  //}
+  
+  .header-content {
+    flex-direction: column;
+  }
+  
+  .burger {
+    //display: none;
+  }
+  
+  .menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .drop-down-menu {
+    //display: flex;
+    //flex-wrap: wrap;
+  }
+  
+  footer .container {
+  flex-direction: column;
+  justify-content: space-around;
+}
+}

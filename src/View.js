@@ -1,13 +1,15 @@
 export const DOM_ELEMENTS = {
-  mainContainer: ".main .container",
+  mainContainer: ".main",
   backToTopBtn: ".backToTop",
   burgerMenu: ".burger",
   imgClass: "gu-image",
   categoryBtn: ".category",
   newsPage: ".news-page",
   previewPage: ".preview-page",
-  logo: ".logo",
+  logo: "header .title",
   input: "#input-search",
+  dropDownMenu: ".drop-down-menu",
+  menuList: ".menu-list"
 };
 
 class View {
@@ -16,6 +18,10 @@ class View {
     while (mainNode.firstChild) {
       mainNode.firstChild.remove();
     }
+  }
+  
+  static displayCategory(data) {
+    document.querySelector(".menu-list").appendChild(data);
   }
 
   static displayNewsList(data) {
@@ -71,9 +77,26 @@ class View {
     document.getElementById("loading").style.display = "none";
   }
 
-  static toggleBurgerMenu() {
-    document.querySelector(".burger span").classList.toggle("active");
-    document.querySelector(".menu").classList.toggle("animate");
+  static toggleBurgerMenu(isOpened) {
+    const span = document.querySelector(".burger span");
+    const menu = document.querySelector(".menu");
+    
+    if (isOpened) {
+      span.classList.add("active");
+      menu.classList.add("animate");
+    } else {
+      span.classList.remove("active");
+      menu.classList.remove("animate");
+    }
+  }
+  
+  static toggleCategoryMenu(isOpened) {
+    const dropDownMenu = document.querySelector(DOM_ELEMENTS.dropDownMenu);
+    if (isOpened) {
+      dropDownMenu.classList.add("open");
+    } else {
+      dropDownMenu.classList.remove("open");
+    }
   }
 }
 

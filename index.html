@@ -7,59 +7,51 @@
   <title>News App</title>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <h2 class="header-text logo">News App</h2>
-        <div class="input-container">
-          <div class="input-content">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"></path></svg>
-            <input
+  <section class="container">
+    <!-- Header -->
+    <header class="header">
+      <!--Title-->
+      <h1 class="title">News App</h1>
+      <!--Input-->
+      <div class="input-container">
+        <span data="&#128269" class="input-content">
+          <input
             id="input-search"
-            type="text" placeholder="Type something to start search"
-            class="input input-search"
-            value="">
-          </div>
-        </div>
-        <div class="menu">
-          <div class="menu-item">
-            <span>Categories</span>
-            <ul class="drop-down-menu">
-              <li class="drop-down-content category" id="sport">Sport</li>
-              <li class="drop-down-content category" id="world">World</li>
-              <li class="drop-down-content category" id="covid"">Covid</li>
-              <li class="drop-down-content category" id="business"">Business</li>
-              <li class="drop-down-content category" id="politics">Politics</li>
-              <li class="drop-down-content category" id="science">Science</li>
-              <li class="drop-down-content category" id="religion">Religion</li>
-              <li class="drop-down-content category" id="health">Health</li>
-            </ul>
-          </div>
-          <p class="menu-item category" id="trending"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bolt" class="svg-inline--fa fa-bolt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M373.1 280.1l-255.1 223.1C111.1 509.3 103.5 512 96 512c-6.593 0-13.19-2.016-18.81-6.109c-12.09-8.781-16.5-24.76-10.59-38.5L143.5 288L32.01 288c-13.34 0-25.28-8.266-29.97-20.75c-4.687-12.47-1.125-26.55 8.906-35.33l255.1-223.1c11.25-9.89 27.81-10.58 39.87-1.799c12.09 8.781 16.5 24.76 10.59 38.5l-76.88 179.4l111.5-.0076c13.34 0 25.28 8.266 29.97 20.75C386.6 257.2 383.1 271.3 373.1 280.1z"></path></svg>Trending News</p>
-        </div>
-        <div class="burger">
-          <span></span>
-        </div>
+            type="text"
+            placeholder="Type something to start search"
+            class="input-search"
+            value=""/>
+        </span>
       </div>
-    </div>
-  </header>
-  <!-- Main -->
-  <main class="main">
-    <div class="container">
+      <!--Menu-->
+      <section class="menu">
+        <p class="menu-item menu-list">
+          Categories
+        </p>
+        <p class="menu-item category" data="&#9889" id="trending">
+          Trending News
+        </p>
+      </section>
+      <!--Burger-->
+      <div class="burger">
+        <span></span>
+      </div>
+    </header>
+  
+    <!-- Main -->
+    <main class="main">
       <div class="loader"></div>
-    </div>
-  </main>
+    </main>
+  </section>
+  
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <span class="footer-title">News App</span>
-        <span>2021 copyright all rights reserved</span>
-      </div>
-    </div>
+  <footer>
+    <section class="container">
+      <h1 class="title">News App</h1>
+      <span>2021 copyright all rights reserved</span>
+      <button class="backToTop">Scroll to top</button>
+    </section>
   </footer>
-  <button class="backToTop">Scroll to top</button>
   <script src="src/index.js"></script>
 </body>
 </html>
