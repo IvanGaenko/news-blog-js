@@ -6,58 +6,7 @@
 @import "./newsList.scss";
 @import "./singlePage.scss";
 @import "./previewList.scss";
-//@import "./responsive.scss";
-
-.header {
-  position: relative;
-  height: 60px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid black;
-}
-
-.title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-header .title {
-  min-width: 20vw;
-  cursor: pointer;
-}
-
-.input-container {
-  margin-right: auto;
-  height: 32px;
-  width: 300px;
-  background: $grey;
-  border-radius: 4px;
-  padding-left: 19px;
-}
-
-.input-content {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
-.input-content:before {
-  content: attr(data);
-}
-
-.input-search {
-  width: 100%;
-  border: none;
-  background: transparent;
-  outline: 0;
-}
-
-.input-search::placeholder {
-  opacity: 0.3;
-}
+@import "./responsive.scss";
 
 .loader {
   border: 16px solid rgba($grey, 0.5);
@@ -75,6 +24,7 @@ header .title {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

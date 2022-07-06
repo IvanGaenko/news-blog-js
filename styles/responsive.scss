@@ -1,32 +1,137 @@
-@media (max-width: 600px) {
-  //.container {
-    //max-width: 600px;
-  //}
-  
-  //.input-container {
-    //width: 50px;
-  //}
-  
-  .header-content {
-    flex-direction: column;
+@media (min-width: 650px) {
+  .input-container {
+    width: 350px;
   }
-  
+
+  .header {
+    flex-direction: row;
+    height: 60px;
+  }
+
+  .header .title {
+    margin-right: 60px;
+  }
+
   .burger {
-    //display: none;
+    display: flex;
   }
-  
+
   .menu {
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
+    justify-content: flex-end;
+    padding: 0;
+    width: 215px;
   }
-  
-  .drop-down-menu {
-    //display: flex;
-    //flex-wrap: wrap;
+
+  .menu-item {
+    margin-right: 40px;
   }
-  
-  footer .container {
-  flex-direction: column;
-  justify-content: space-around;
+
+  .news-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .recent-news {
+    height: 243px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .recent-card-0 {
+    flex-direction: row;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+
+    .news-card-description {
+      padding: 40px 80px 40px 60px;
+    }
+
+    .gu-image {
+      order: 1;
+      width: 45%;
+      height: 100%;
+    }
+  }
+
+  .drop-down-preview {
+    width: 100%;
+    top: 50px;
+  }
+
+  .single-page img {
+    margin-top: 30px;
+    height: 380px;
+    margin-bottom: 60px;
+  }
+
+  .single-page-title {
+    font-size: 45px;
+    line-height: 54px;
+  }
+
+  .single-page-description {
+    margin-bottom: 70px;
+  }
 }
+
+@media (min-width: 650px) {
+  body {
+    background: red;
+  }
+
+  .news-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .menu {
+    margin-left: 10px;
+  }
+
+  .menu-item {
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  .header .title {
+    margin-right: 10px;
+  }
+
+  .input-content {
+    margin-left: 5px;
+  }
+
+  .recent-card-0 .news-card-description {
+    padding: 30px;
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background: blue;
+  }
+
+  .news-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .header .title {
+    margin-right: 60px;
+  }
+
+  .menu-item {
+    margin-right: 40px;
+  }
+
+  .input-container {
+    width: 350px;
+  }
+
+  .menu {
+    width: 275px;
+  }
+
+  .recent-card-0 .news-card-description {
+    padding: 40px 80px 40px 60px;
+  }
 }

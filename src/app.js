@@ -29,25 +29,30 @@ class Application {
     document
       .querySelector(DOM_ELEMENTS.burgerMenu)
       .addEventListener("click", () => {
-        
         if (this.openMenu && this.openCategory) {
           this.toggleCategoryMenu();
         }
         this.toggleBurgerMenu();
       });
-      
+
     document
       .querySelector(DOM_ELEMENTS.menuList)
-      .addEventListener("click", (e) => {
+      .addEventListener("click", () => {
         this.toggleCategoryMenu();
       });
-      
+
     document
       .querySelector(DOM_ELEMENTS.menuList)
-      .addEventListener("mouseenter", (e) => {
+      .addEventListener("mouseenter", () => {
         this.toggleCategoryMenu();
       });
-    
+
+    document
+      .querySelector(DOM_ELEMENTS.menuList)
+      .addEventListener("mouseleave", () => {
+        this.toggleCategoryMenu(false);
+      });
+
     document.querySelectorAll(DOM_ELEMENTS.categoryBtn).forEach((category) => {
       category.addEventListener("click", (e) => {
         this.category.setCategory(e.target.id);
@@ -69,6 +74,7 @@ class Application {
         this.inputValue = e.target.value;
         if (this.inputValue.length > 0) {
           this.news.editNewsPage = true;
+          View.cancelInput(true);
           if (this.switcher === "list") {
             this.filterNewsList(this.inputValue);
           } else {
@@ -77,6 +83,8 @@ class Application {
         } else {
           this.inputValue = "";
           this.news.editNewsPage = false;
+          View.cancelInput(false);
+
           if (this.switcher === "list") {
             this.filterNewsList(this.inputValue);
           } else {
@@ -84,23 +92,32 @@ class Application {
           }
         }
       });
+
+    document
+      .querySelector(DOM_ELEMENTS.inputCancel)
+      .addEventListener("click", () => {
+        View.clearPreviewList();
+        View.clearInput();
+        this.inputValue = "";
+        View.cancelInput(false);
+      });
   }
-  
+
   displayCategory() {
     this.category.getCategoryList();
     View.displayCategory(this.category.listHTML);
   }
-  
+
   toggleBurgerMenu(isOpened = !this.openMenu) {
     this.openMenu = isOpened;
     View.toggleBurgerMenu(this.openMenu);
   }
-  
+
   toggleCategoryMenu(isOpened = !this.openCategory) {
     this.openCategory = isOpened;
     View.toggleCategoryMenu(this.openCategory);
   }
-  
+
   defaultMenu() {
     this.toggleCategoryMenu(false);
     this.toggleBurgerMenu(false);
@@ -123,6 +140,9 @@ class Application {
       if (type === "add") {
         page.addEventListener("click", (e) => {
           View.clearPreviewList();
+          View.clearInput();
+          this.inputValue = "";
+          View.cancelInput(false);
           this.displayNewsPage(e.target.attributes[1].value, this.inputValue);
         });
       }
@@ -142,6 +162,7 @@ class Application {
           View.clearPreviewList();
           View.clearInput();
           this.inputValue = "";
+          View.cancelInput(false);
           this.displayNewsPage(e.target.attributes[1].value, this.inputValue);
         });
       }

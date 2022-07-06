@@ -9,7 +9,8 @@ export const DOM_ELEMENTS = {
   logo: "header .title",
   input: "#input-search",
   dropDownMenu: ".drop-down-menu",
-  menuList: ".menu-list"
+  menuList: ".menu-list",
+  inputCancel: ".input-cancel",
 };
 
 class View {
@@ -19,7 +20,9 @@ class View {
       mainNode.firstChild.remove();
     }
   }
-  
+
+  static initInterface() {}
+
   static displayCategory(data) {
     document.querySelector(".menu-list").appendChild(data);
   }
@@ -80,7 +83,7 @@ class View {
   static toggleBurgerMenu(isOpened) {
     const span = document.querySelector(".burger span");
     const menu = document.querySelector(".menu");
-    
+
     if (isOpened) {
       span.classList.add("active");
       menu.classList.add("animate");
@@ -89,7 +92,7 @@ class View {
       menu.classList.remove("animate");
     }
   }
-  
+
   static toggleCategoryMenu(isOpened) {
     const dropDownMenu = document.querySelector(DOM_ELEMENTS.dropDownMenu);
     if (isOpened) {
@@ -97,6 +100,12 @@ class View {
     } else {
       dropDownMenu.classList.remove("open");
     }
+  }
+
+  static cancelInput(type) {
+    document.querySelector(DOM_ELEMENTS.inputCancel).style.display = type
+      ? "block"
+      : "none";
   }
 }
 
