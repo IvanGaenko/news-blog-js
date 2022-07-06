@@ -1,4 +1,4 @@
-footer {
+.footer {
   height: 60px;
   width: 100%;
   border-top: 1.5px solid $darkgray;
@@ -7,13 +7,13 @@ footer {
   align-items: center;
 }
 
-footer .container {
+.footer .container {
   flex-direction: row;
   height: 60px;
   justify-content: space-between;
 }
 
-footer span {
+.footer span {
   font-size: 16px;
 }
 

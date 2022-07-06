@@ -13,25 +13,25 @@ class NewsCard {
   }
 
   render() {
-    let div = document.createElement("div");
+    let div = document.createElement("article");
     div.appendChild(this.img);
     div.innerHTML += `
-    <div class="news-card-description">
-      <p class="news-card-title news-page" value="${this.id}">
+    <article class="news-card-description">
+      <header class="news-card-title news-page" value="${this.id}">
         ${this.headline}
-      </p>
+      </header>
       <p class="news-card-content">
         ${this.trailText}
       </p>
-      <div class="card-footer">
+      <footer class="card-footer">
         <p class="card-footer-time">${timeAgo(this.firstPublicationDate)}</p>
         <p class="card-footer-read-more news-page"
         value="${this.id}">Read more</p>
-      </div>
+      </footer>
       <p class="card-footer-time">${
         this.haveSeen ? timeAgo(this.haveSeen) : "New post"
       }</p>
-    </div>
+    </article>
     `;
     return div;
   }

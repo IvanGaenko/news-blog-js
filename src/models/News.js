@@ -36,8 +36,8 @@ class News {
     }
     if (status === "ok") {
       this.category = category;
-      const recentNews = document.createElement("div");
-      const newsList = document.createElement("div");
+      const recentNews = document.createElement("section");
+      const newsList = document.createElement("section");
       recentNews.className = "recent-news";
       newsList.className = "news-list";
 

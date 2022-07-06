@@ -6,7 +6,7 @@ export const DOM_ELEMENTS = {
   categoryBtn: ".category",
   newsPage: ".news-page",
   previewPage: ".preview-page",
-  logo: "header .title",
+  logo: ".header .title",
   input: "#input-search",
   dropDownMenu: ".drop-down-menu",
   menuList: ".menu-list",

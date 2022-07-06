@@ -76,10 +76,6 @@
 }
 
 @media (min-width: 650px) {
-  body {
-    background: red;
-  }
-
   .news-list {
     grid-template-columns: 1fr 1fr;
   }
@@ -107,10 +103,6 @@
 }
 
 @media (min-width: 800px) {
-  body {
-    background: blue;
-  }
-
   .news-list {
     grid-template-columns: 1fr 1fr 1fr;
   }
