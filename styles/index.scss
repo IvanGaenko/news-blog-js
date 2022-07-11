@@ -6,64 +6,17 @@
 @import "./newsList.scss";
 @import "./singlePage.scss";
 @import "./previewList.scss";
-
-.header {
-  height: 60px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.header-content {
-  display: flex;
-}
-
-.header-text {
-  margin-right: 60px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  align-items: center;
-}
-
-.input-container {
-  flex-grow: 1;
-}
-
-.input-content {
-  display: flex;
-  height: 32px;
-  width: 350px;
-  background-color: $grey;
-  border-radius: 4px;
-}
-
-.input-content:first-child {
-  padding: 7px 0px 7px 19px;
-}
-
-.input-search {
-  width: 100%;
-  border: 1px solid $grey;
-  background-color: $grey;
-  outline: 0;
-  margin-left: 11px;
-}
-
-.main {
-  height: 100%;
-  flex-grow: 1;
-}
+@import "./responsive.scss";
 
 .loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border: 16px solid rgba($grey, 0.5);
+  border-top: 16px solid $grey;
   border-radius: 50%;
   position: absolute;
-  left: 45vw;
-  top: 50vh;
-  width: 100px;
-  height: 100px;
+  left: calc(50vw - (15vw / 2));
+  top: calc(50vh - (15vw / 2));
+  width: 15vw;
+  height: 15vw;
   animation: spin 2s linear infinite;
 }
 
@@ -71,6 +24,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

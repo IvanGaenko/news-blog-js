@@ -1,7 +1,6 @@
 {
   "name": "js_blog",
   "version": "1.0.0",
-  "main": "index.html",
   "author": "Ivan Gaenko",
   "license": "MIT",
   "scripts": {
@@ -10,10 +9,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
+    "@parcel/transformer-sass": "2.6.2",
     "eslint": "^8.4.0",
-    "node-sass": "^7.0.0",
-    "parcel": "^2.0.1",
-    "parcel-bundler": "^1.12.5"
+    "jest": "^28.1.2",
+    "parcel": "^2.6.2"
   },
   "browserslist": [
     "last 1 Chrome versions"

@@ -1,23 +1,20 @@
 .footer {
   height: 60px;
   width: 100%;
-  border-top: 1.5px solid $grey;
+  border-top: 1.5px solid $darkgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer .container {
-  height: 100%;
+  flex-direction: row;
+  height: 60px;
+  justify-content: space-between;
 }
 
-.footer-content {
-  display: flex;
-  align-items: center;
-  height: 100%;
+.footer span {
   font-size: 16px;
-}
-
-.footer-title {
-  font-weight: bold;
-  margin-right: 0.2rem;
 }
 
 .backToTop {
